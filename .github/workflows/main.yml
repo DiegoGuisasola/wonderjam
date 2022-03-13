@@ -7,29 +7,12 @@ jobs:
     name: Build my project ✨
     runs-on: ubuntu-latest
     steps:
-      # Checkout (without LFS)
+      # Checkout
       - name: Checkout repository
         uses: actions/checkout@v2
-        
-      ######### DELETE FOLLOWING PART IF NOT USING GITHUB'S GIT LFS
-      # Git LFS
-      - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restore LFS cache
-        uses: actions/cache@v2
-        id: lfs-cache
         with:
-          path: .git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+          lfs: true
 
-      - name: Git LFS Pull
-        run: |
-          git lfs pull
-          git add .
-          git reset --hard
-          
-      ###############################################################
       # Cache
       - uses: actions/cache@v2
         with:
@@ -55,7 +38,6 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          allowDirtyBuild: true
 
       # Output
       - uses: actions/upload-artifact@v2
