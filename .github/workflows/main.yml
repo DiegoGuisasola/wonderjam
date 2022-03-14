@@ -3,7 +3,7 @@
 on: [push, pull_request]
 
 jobs:
-  build:
+  buildWebGL: # buildWebGL: https://youtu.be/M2BZr02uai0?t=1382
     name: Build my project ✨
     runs-on: ubuntu-latest
     steps:
@@ -40,8 +40,27 @@ jobs:
           targetPlatform: WebGL
 #          allowDirtyBuild: true # Only on extreme cases
 
-      # Output
+      # Storing the build
       - uses: actions/upload-artifact@v2
         with:
-          name: Build
+          name: build-WebGL
+          path: build/WebGL
+  
+  deployPages:
+    needs: buildWebGL
+    name: Deploy to Github Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - uses: actions/download-artifact@v2
+        with: 
+          name: build-WebGL # Copy artifact (the webgl build) to the build folder
           path: build
+      
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with: 
+          branch: gh-pages
+          folder: build/WebGL
