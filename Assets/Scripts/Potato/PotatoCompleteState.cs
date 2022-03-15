@@ -2,17 +2,17 @@
 
 namespace Potato
 {
-    public class CarrotCompleteState : CarrotBaseState
+    public class PotatoCompleteState : PotatoBaseState
     {
         private float changeStateCountdown = 1.0f;
 
-        public override void EnterState(CarrotStateManager carrot)
+        public override void EnterState(PotatoStateManager carrot)
         {
             Animator animator = carrot.GetComponent<Animator>();
             animator.Play("Complete");
         }
 
-        public override void UpdateState(CarrotStateManager carrot)
+        public override void UpdateState(PotatoStateManager carrot)
         {
             if (changeStateCountdown >= 0)
             {

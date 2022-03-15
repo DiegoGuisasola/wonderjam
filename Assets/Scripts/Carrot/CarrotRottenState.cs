@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Carrot
+namespace Potato
 {
     public class CarrotRottenState : CarrotBaseState
     {
@@ -9,7 +9,7 @@ namespace Carrot
         public override void EnterState(CarrotStateManager carrot)
         {
             Animator animator = carrot.GetComponent<Animator>();
-            animator.Play("CarrotRotten");
+            animator.Play("Rotten");
         }
 
         public override void UpdateState(CarrotStateManager carrot)

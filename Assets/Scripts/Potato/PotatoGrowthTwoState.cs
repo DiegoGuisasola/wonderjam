@@ -2,17 +2,17 @@
 
 namespace Potato
 {
-    public class CarrotCompleteState : CarrotBaseState
+    public class PotatoGrowthTwoState : PotatoBaseState
     {
         private float changeStateCountdown = 1.0f;
 
-        public override void EnterState(CarrotStateManager carrot)
+        public override void EnterState(PotatoStateManager carrot)
         {
             Animator animator = carrot.GetComponent<Animator>();
-            animator.Play("Complete");
+            animator.Play("GrowthTwo");
         }
 
-        public override void UpdateState(CarrotStateManager carrot)
+        public override void UpdateState(PotatoStateManager carrot)
         {
             if (changeStateCountdown >= 0)
             {
@@ -20,10 +20,9 @@ namespace Potato
             }
             else
             {
-                carrot.SwitchState(carrot.RottenState);
+                carrot.SwitchState(carrot.CompleteState);
                 changeStateCountdown = 1.0f;
             }
         }
     }
 }
-
