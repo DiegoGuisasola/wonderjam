@@ -7,6 +7,9 @@ namespace Carrot
         CarrotBaseState _currentState;
         public CarrotInitialState InitialState = new CarrotInitialState();
         public CarrotRottenState RottenState = new CarrotRottenState();
+        public CarrotGrowthOneState GrowthOneState = new CarrotGrowthOneState();
+        public CarrotGrowthTwoState GrowthTwoState = new CarrotGrowthTwoState();
+        public CarrotCompleteState CompleteState = new CarrotCompleteState();
 
         // Start is called before the first frame update
         void Start()

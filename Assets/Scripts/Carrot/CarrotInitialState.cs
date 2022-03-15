@@ -4,13 +4,12 @@ namespace Carrot
 {
     public class CarrotInitialState : CarrotBaseState
     {
-        private float changeStateCountdown = 2.0f;
-        
-        
+        private float changeStateCountdown = 1.0f;
+
         public override void EnterState(CarrotStateManager carrot)
         {
             Animator animator = carrot.GetComponent<Animator>();
-            animator.Play("CarrotBase");
+            animator.Play("CarrotInitial");
         }
 
         public override void UpdateState(CarrotStateManager carrot)
@@ -21,8 +20,8 @@ namespace Carrot
             }
             else
             {
-                carrot.SwitchState(carrot.RottenState);
-                changeStateCountdown = 2.0f;
+                carrot.SwitchState(carrot.GrowthOneState);
+                changeStateCountdown = 1.0f;
             }
         }
     }
