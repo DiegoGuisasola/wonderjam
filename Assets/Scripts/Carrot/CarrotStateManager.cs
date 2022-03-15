@@ -1,6 +1,7 @@
+using Potato;
 using UnityEngine;
 
-namespace Carrot
+namespace Potato
 {
     public class CarrotStateManager : MonoBehaviour
     {

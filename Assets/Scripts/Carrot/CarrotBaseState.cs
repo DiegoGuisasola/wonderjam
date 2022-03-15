@@ -1,4 +1,4 @@
-﻿namespace Carrot
+﻿namespace Potato
 {
     public abstract class CarrotBaseState
     {
