@@ -4,7 +4,7 @@ namespace Potato
 {
     public class PotatoInitialState : PotatoBaseState
     {
-        private float changeStateCountdown = 1.0f;
+        private float changeStateCountdown = 3.0f;
 
         public override void EnterState(PotatoStateManager carrot)
         {
@@ -21,7 +21,7 @@ namespace Potato
             else
             {
                 carrot.SwitchState(carrot.GrowthOneState);
-                changeStateCountdown = 1.0f;
+                changeStateCountdown = 3.0f;
             }
         }
     }
