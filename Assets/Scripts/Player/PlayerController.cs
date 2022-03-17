@@ -7,9 +7,9 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     public float velocidad;
+    
     private void FixedUpdate()
     {
-
         if (Input.GetKey("a") )
         {
             transform.position += new Vector3(-velocidad*Time.deltaTime, 0, 0);
@@ -18,9 +18,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("d"))
         {
             transform.position += new Vector3(velocidad*Time.deltaTime, 0, 0);
-        }
-
             
         }
+    }
 }
 
