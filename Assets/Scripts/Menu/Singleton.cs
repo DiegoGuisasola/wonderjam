@@ -14,7 +14,6 @@ namespace Menu
                 {
                     GameObject obj = new GameObject();
                     obj.name = typeof(T).Name;
-                    // obj.hideFlags = HideFlags.HideAndDontSave;
                     _instance = obj.AddComponent<T>();
                 }
                 return _instance;

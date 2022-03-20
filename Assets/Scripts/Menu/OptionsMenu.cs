@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionsMenu : MonoBehaviour
+namespace Menu
 {
-    public void OnClick_Back()
+    public class OptionsMenu : MonoBehaviour
     {
-        
+        public void OnClick_Back()
+        {
+            MenuManager.Instance.OpenMenu(Menu.MAIN_MENU);
+        }
     }
 }
