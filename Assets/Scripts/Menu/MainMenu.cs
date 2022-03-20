@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
-using Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+namespace Menu
 {
-    public void OnClick_Play()
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
-    }
+        public void OnClick_Play()
+        {
+            SceneManager.LoadScene(1);
+        }
     
-    public void OnClick_Options()
-    {
-        //MenuManager.OpenMenu(Menu.Menu.OPTIONS, this.gameObject);
-    }
+        public void OnClick_Options()
+        {
+            MenuManager.Instance.OpenMenu(Menu.OPTIONS);
+        }
     
-    public void OnClick_Credits()
-    {
-        
-    }
+        public void OnClick_Credits()
+        {
+            MenuManager.Instance.OpenMenu(Menu.CREDITS);
+        }
     
-    public void OnClick_Exit()
-    {
-        
+        public void OnClick_Exit()
+        {
+            Application.Quit();
+        }
     }
 }
