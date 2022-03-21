@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Outside.unity
     guid: 9128d253c3ef27942996a01f28f53d61
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 17df546e714447f4da11238f09cd62d3
+  - enabled: 1
+    path: Assets/Scenes/Greenhouse.unity
+    guid: df5ccdd1be53fea4780ad842e68cea94
   m_configObjects: {}
