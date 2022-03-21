@@ -6,8 +6,22 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+    
     public float velocidad;
     private AudioSource stepSound;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {

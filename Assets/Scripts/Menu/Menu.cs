@@ -4,6 +4,7 @@
     {
         MAIN_MENU,
         OPTIONS,
-        CREDITS
+        CREDITS,
+        DISABLE
     }
 }

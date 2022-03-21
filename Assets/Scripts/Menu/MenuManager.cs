@@ -32,9 +32,22 @@ namespace Menu
                     HandleCreditsMenu();
                     
                     break;
+                case Menu.DISABLE:
+                    HandleDisableMenu();
+
+                    break;
             }
         }
-        
+
+        private void HandleDisableMenu()
+        {
+            // Deactivate Menu
+            _mainMenuPanel.SetActive(false);
+            _optionsPanel.SetActive(false);
+            _creditsPanel.SetActive(false);
+            _scrollingPanel.SetActive(false);
+        }
+
         private void HandleMainMenu()
         {
             _mainMenuPanel.SetActive(true);

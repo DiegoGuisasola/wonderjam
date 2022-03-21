@@ -13,7 +13,7 @@ namespace Menu
             {
                 _instance = this as T;
                 transform.parent = null;
-                DontDestroyOnLoad(this);
+                //DontDestroyOnLoad(this);
             }
             else
             {

@@ -7,7 +7,8 @@ namespace Menu
     {
         public void OnClick_Play()
         {
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene(1);
+            GameManager.Instance.UpdateGameState(GameState.Play);
         }
     
         public void OnClick_Options()
